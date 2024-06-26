@@ -1,0 +1,48 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.mat-table {
+    overflow: auto;
+    width: 100%;
+}
+
+.searchBox {
+    padding: 6px;
+}
+
+.addUser {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.text-right {
+    text-align: right !important;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.searchToolbar {
+    background-color: lavender;
+    margin-bottom: 15px;
+}
+
+.mat-header-row::ng-deep {
+    background-color: rgb(100, 134, 245);
+    color: white;
+}
+
+.mat-cell::ng-deep {
+    background-color: lavender;
+    color: black;
+}
+
+
+th.mat-header-cell {
+    text-align: left;
+    color: white;
+    font-size: medium;
+}

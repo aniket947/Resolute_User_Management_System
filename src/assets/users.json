@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Aniket Mandle",
+        "email": "aniket.mandle2@gmail.com",
+        "role": "User",
+        "id": "0"
+    },
+    {
+        "name": "Jon Lewis",
+        "email": "jon.lewis@gmail.com",
+        "role": "Admin",
+        "id": "0"
+    },
+    {
+        "name": "Tom Hartley",
+        "email": "tom.hartley@yahoo.com",
+        "role": "User",
+        "id": "0"
+    }
+]

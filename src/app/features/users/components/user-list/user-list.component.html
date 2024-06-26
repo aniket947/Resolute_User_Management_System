@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-7 searchToolbar">
+            <div class="pt-2">
+                <input class="form-control" placeholder="Search By Name or Email" (input)="searchUsers($event)">
+            </div>
+        </div>
+        <div class="col-md-5 searchToolbar">
+            <div class="text-right">
+                <button (click)="addUser()" type="submit" class="btn btn-success">Add User</button>
+            </div>
+        </div>
+
+        <div *ngIf="!showLoader" class="row m-0 p-0">
+            <table mat-table [dataSource]="sortedData" (matSortChange)="sortData($event)"
+                class="mat-elevation-z8 demo-table" matSort>
+                <ng-container matColumnDef="Name">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef>Name</th>
+                    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Email">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef>Email</th>
+                    <td mat-cell *matCellDef="let element">{{element.email}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Role">
+                    <th mat-header-cell *matHeaderCellDef>Role</th>
+                    <td mat-cell *matCellDef="let element">{{element.role}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Actions">
+                    <th mat-header-cell *matHeaderCellDef>Actions</th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-icon (click)="editUser(element)" color="warn">edit</mat-icon>
+                        <mat-icon (click)="openConfirmationDialog(element)" color="warn">delete</mat-icon>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+        </div>
+    </div>
+</div>
